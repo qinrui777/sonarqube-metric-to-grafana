@@ -1,11 +1,8 @@
 ## SHOW SONARQUBE METRIC TO GRAFANA
 ---
 
- stack: 
-  - sonarqube
-  - influxdb
-  - grafana
-  - docker
+ stack:  sonarqube、influxdb、grafana、docker
+
 
 ####  Data flow diagram
 
@@ -28,7 +25,7 @@ docker run -d --name export-sonarqube \
 -e INFLUX_USER=admin \
 -e INFLUX_PASSWORD=admin \
 -e INFLUX_DB=sonarqube_exporter \
--e INTERVAL=86400 nexus.twdns.top:5000/devops/export-sonarqube-metric:v7
+-e INTERVAL=86400 dockerRepo/export-sonarqube-metric:v7
 ```
 
 #### Add alert in grafana 
