@@ -6,7 +6,7 @@
 
 ####  Data flow diagram
 
-![picture]https://github.com/qinrui777/sonarqube-metric-to-grafana/blob/master/images/Data-flow-diagram.png
+![picture](https://github.com/qinrui777/sonarqube-metric-to-grafana/blob/master/images/Data-flow-diagram.png)
 #### Install influxdb
 
 
