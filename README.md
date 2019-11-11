@@ -1,22 +1,24 @@
 ## SHOW SONARQUBE METRIC TO GRAFANA
 ---
 
- stack:  sonarqube、influxdb、grafana、docker
+**stack**:  sonarqube、influxdb、grafana、docker
 
 
 ####  Data flow diagram
 
 ![picture](https://github.com/qinrui777/sonarqube-metric-to-grafana/blob/master/images/Data-flow-diagram.png)
 #### Install influxdb
-
+TBD
 
 #### Install grafana
-
+TBD
 
 ### Make data collector
-dockerfile 
-run 
-
+```bash
+#build a image for collector
+cd sonar_collector_docker
+docker build -t export-sonarqube-metric:v0.1 .
+```
 
 ```bash
 docker run -d --name export-sonarqube \
@@ -25,12 +27,13 @@ docker run -d --name export-sonarqube \
 -e INFLUX_USER=admin \
 -e INFLUX_PASSWORD=admin \
 -e INFLUX_DB=sonarqube_exporter \
--e INTERVAL=86400 dockerRepo/export-sonarqube-metric:v7
+-e INTERVAL=86400 <YourDockerRepo>/export-sonarqube-metric:v7
 ```
+you can change the environment,like `INTERVAL` which means how long to collect the data from sonarqube server. 
 
 #### Add alert in grafana 
 
-
+edit  `grafana.ini` file  
 ```bash
 #################################### SMTP / Emailing ##########################
 [smtp]
@@ -57,3 +60,7 @@ from_address = 305xxxxx18@qq.com
 # Makes it possible to turn off alert rule execution but alerting UI is visible
 execute_alerts = true
 ```
+
+---
+More ref:
+https://grafana.com/grafana/dashboards/10763
