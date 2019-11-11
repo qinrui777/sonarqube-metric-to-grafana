@@ -63,4 +63,6 @@ execute_alerts = true
 
 ---
 More ref:
-https://grafana.com/grafana/dashboards/10763
+- https://grafana.com/grafana/dashboards/10763
+- [telegraf+influxdb+grafana环境初探
+](https://www.xujun.org/note-4822.html)
